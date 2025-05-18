@@ -94,3 +94,19 @@ body{
         opacity: 1;
     }
 }
+/*day 3*/
+.main-content {
+    margin-left: 270px;
+    padding: 30px;
+}
+
+/* Section Styling */
+.about-section,
+.academic-achievement,
+.hobby-swimming,
+.hobby-gaming {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
