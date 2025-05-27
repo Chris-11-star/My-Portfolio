@@ -1,11 +1,14 @@
-body{
+body {
     background-color: darkkhaki;
 }
-.sidebar h4{
+
+/* SIDEBAR */
+.sidebar h4 {
     color: darkred;
     font-size: 1.5rem;
 }
-.sidebar{
+
+.sidebar {
     height: 100vh;
     width: 250px;
     background-color: beige;
@@ -13,35 +16,41 @@ body{
     position: fixed;
     margin-top: 0;
     border-radius: 5px;
+    top: 0;
+    left: 0;
+    z-index: 999; /* Ensure it stays on top */
 }
-.sidebar img{
+
+.sidebar img {
     height: 80px;
     width: 80px;
     border-radius: 50%;
 }
-.sidebar a{
+
+.sidebar a {
     display: block;
     text-decoration: none;
     padding: 10px;
     color: darkcyan;
 }
-.sidebar a:hover{
-    background-color:khaki;
+
+.sidebar a:hover {
+    background-color: khaki;
     color: orange;
     border-left: 4px solid coral;
     border-radius: 4px;
     transition: all 0.5ms ease;
-    border-left: 4px solid transparent;
 }
 
-.social-icons{
+/* SOCIAL ICONS */
+.social-icons {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
 }
 
-/*day 2*/
+/* HERO SECTION */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -50,17 +59,16 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 270px; /* to avoid overlap with sidebar */
+    margin-left: 270px; /* avoid sidebar overlap */
 }
 
-
-.overlay{
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0.5);/*darkens the background image for contrast*/
+    background-color: rgba(0,0,0,0.5); /* corrected rgba syntax */
     z-index: 1;
     border-radius: 8px;
 }
@@ -84,7 +92,7 @@ body{
     color: #ffebcd;
 }
 
-/*Animation*/
+/* FADE ANIMATION */
 @keyframes fadeSlideIn {
     0% {
         transform: translateY(50px);
@@ -96,13 +104,13 @@ body{
     }
 }
 
-/*day 3*/
+/* MAIN CONTENT FIX */
 .main-content {
-    margin-left: 270px;
+    margin-left: 270px; /* must match sidebar width */
     padding: 30px;
 }
 
-/* Section Styling */
+/* SECTION STYLING */
 .about-section,
 .academic-achievement,
 .swimming-hobby,
@@ -110,13 +118,17 @@ body{
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 15px;
     padding: 30px 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-/*day 4*/
+
+/* PROJECT CARDS */
 .card {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
+    max-width: 300px;
+    min-width: 250px;
 }
 
 .card:hover {
@@ -159,8 +171,24 @@ body{
     gap: 20px;
 }
 
-.card {
-    flex: 1 1 calc(33.333% - 20px); /* 3 per row */
-    max-width: 300px;
-    min-width: 250px;
+/* FIXED CAROUSEL IMAGE HEIGHT */
+.carousel-inner img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* RESPONSIVE TWEAK (OPTIONAL) */
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        text-align: center;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
 }
